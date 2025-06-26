@@ -1,15 +1,18 @@
-name: A test
 on:
     pull_request_target:
-        types: [enqueued, edited]
+        types: [opened, edited] # Could be anything, this one is easy to test
 
 jobs:
-    jobid:
-        name: GHA test
+    job-with-env:
         runs-on: ubuntu-latest
         environment: main
         steps:
-            - name: Echo
-              run: |
+            - run: |
+                echo "${{ github.ref }}"
+                echo "${{ github.sha }}"
+    job-without-env:
+        runs-on: ubuntu-latest
+        steps:
+            - run: |
                 echo "${{ github.ref }}"
                 echo "${{ github.sha }}"
