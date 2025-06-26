@@ -1,7 +1,7 @@
 name: A test
 on:
     pull_request_target:
-        types: [enqueued]
+        types: [enqueued, edited]
 
 jobs:
     jobid:
