@@ -1,0 +1,12 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  plop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Foo
+        run: |
+          gh api /app
+        env:
+          GH_TOKEN: ${{ github.token }}
