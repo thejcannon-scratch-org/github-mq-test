@@ -1,14 +1,10 @@
-name: A test
 on:
-    pull_request_target:
-        types: [enqueued]
+    pull_request:
 
 jobs:
-    jobid:
-        name: GHA test
+    ghcli:
         runs-on: ubuntu-latest
         steps:
-            - name: Echo
-              run: |
+            - run: |
                 echo "${{ github.ref }}"
                 echo "${{ github.sha }}"
