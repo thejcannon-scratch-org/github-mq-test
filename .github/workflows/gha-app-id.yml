@@ -7,6 +7,6 @@ jobs:
     steps:
       - name: Foo
         run: |
-          gh api /app
+          gh pr comment 3 --body "hello"
         env:
           GH_TOKEN: ${{ github.token }}
