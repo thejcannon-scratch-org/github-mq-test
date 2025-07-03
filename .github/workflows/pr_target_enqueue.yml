@@ -1,16 +1,8 @@
 on:
-    pull_request_target:
-        types: [opened, edited] # Could be anything, this one is easy to test
+    pull_request:
 
 jobs:
-    job-with-env:
-        runs-on: ubuntu-latest
-        environment: main
-        steps:
-            - run: |
-                echo "${{ github.ref }}"
-                echo "${{ github.sha }}"
-    job-without-env:
+    ghcli:
         runs-on: ubuntu-latest
         steps:
             - run: |
